@@ -16,7 +16,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Auteur:
-  Sanne 't Hooft (vervangen door jouw naam)
+  Kim van Aken
 
   #### Je startniveau:
   Blauw
@@ -36,7 +36,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  De website die ik responsive ga na-maken is [ben.nl](https://www.ben.nl/)
+  De website die ik responsive ga na-maken is [tele2.nl]([https://www.ben.nl/](https://www.tele2.nl/)
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   De home pagina: 
@@ -45,6 +45,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   #### Screenshot(s) van de tweede pagina (small screen):
   De telefoon optie pagina:
   <img src="readme-images\website-smallsize2.jpg" width="375px" alt="de telefoon opties pagina">
+  
+  NOTE: Omdat ik eerst Ben.nl had en nu tele2, heb ik de websites niet omgewisseld, omdat tele2 nu hun website heeft veranderd naar een black friday deal layout.
  
 </details>
 
@@ -91,7 +93,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na afloop 2e werkgroep</summary>
 
   ### de hele pagina: 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van de hele pagina">
+  <img src="readme-images\homepage-breakdown-schets.jpg" width="375px" alt="breakdown van de hele pagina">
 
   ### dynamisch deel (bijv menu): 
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van een dynamisch deel">
@@ -112,6 +114,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Stand van zaken
   hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Ging goed: Het schrijven van de html.
+  
+  Lastig: het beginnen aan de CSS.
 
 
   ### Agenda voor meeting
