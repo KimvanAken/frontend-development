@@ -174,24 +174,84 @@ hier na afloop snel de uitkomsten van de meeting vastleggen
 ### Bevindingen
 
 Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+  
+  - Sommige kleine teksten zijn moeilijk te lezen
+  - De hover-states zijn niet duidelijk
+  - De screen reader leest de tekens voor lijstjes ook voor - 
+  - 
+  
 
 #### Screenreader
 
 Hier korte omschrijving (met indien nodig afbeeldingen)
-
-Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
-
-#### Muis en Toetsenbord
-
-Hier korte omschrijving (met indien nodig afbeeldingen)
-
+  
+  - de screenreader praat in het engels maar de website is nederlands :(
+  - hij leest de checkmarks en opsommingstekens ook voor bij lijstjes
+  - alt tekst doet het goed
+  
+  Oplossingen:
+  - Document taal in nederlands zetten bovenin html
+  - lang="en" toevoegen bij Engelse woorden
+  
+  - 
 Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
 
 #### Motoriek (shocks, elastiekjes)
 
-Hier korte omschrijving (met indien nodig afbeeldingen)
+  Aaminah ging mijn website testen!
+  
+  peripheral field loss opvattingen:
+  - kleine tekst bij * is moeilijk te lezen
+  - hover states zie  jij bijna niet bij zwarte button links
+  - contrast goed leesbaar
+  - hover kleur links zijn ok, kan duidelijker
+  - draaiknopjes hebben nog geen hover
+ 
+  Oplossing:
+  - Knopje voor kleine font groter te maken 
+  - Hover states kleur veranderen
+  
+  Blur/glare bril opvattingen:
+  - tekst niet te lezen eerste lijst
+  - ziet alleen titels
+  
+  Low contrast opvattingen:
+  - Alles goed te zien
+  - Alleen hover states zijn moeilijker te zien
+
+  Hemifield loss bril opvattingen:
+  - Alles goed te zien
+  
+  Combined Loss diabetic eye disease opvattingen:
+  - Alles duidelijk te zien
+  
+  Vibratie motor / parkinson opvattingen: 
+  - Knopjes groot genoeg
+  - Linkjes in footer te klein voor parkinson
+  
+  Afleiding (ballon)
+  - Website werkt goed :) 
+  
+####Muis toetsenbord en kleurtjes
+  
+  
+  Muis:
+  - Hover state gaat te langzaam en heeft weinig contrast (overgenomen van originele website)
+  
+  Toetsenbord:
+  - slaat de leestekst over (probleem)
+ 
+  
+  Dark - lightmode: 
+  Heb ik (nog) niet
+  
+  
+  Kleurenblind:
+ - knopje xiaomi is grijs bij groene kleurenblindheid, dus lijkt disabled 
+  - de rest van de kleurenblind modus geen probleem
 
 Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  
 
 #### Visueel (brillen, contrast, kleurenblind, dark/light).
 
