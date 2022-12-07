@@ -124,16 +124,16 @@ h1 {
   left: -9999em;
 }
 
-header > nav ul {
-  /*de nav rechts*/
-  margin: 0.25em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+header > nav {
+  height: 100%;
 }
 
-header > nav ul li {
+header > nav ul {
+  /*de nav rechts*/
+  /* margin: 0.25em; */
+  display: flex;
   height: 100%;
+  align-items: center;
 }
 
 header > nav ul li:hover img {
@@ -141,7 +141,7 @@ header > nav ul li:hover img {
 }
 
 header > nav ul li a {
-  padding-top: 1em;
+  padding-top: 4em;
 }
 
 header > nav ul li:hover {
@@ -152,6 +152,7 @@ header nav ul li img {
   /*de images in de nav*/
   max-width: 1.2em;
   margin: 0.25em 1em;
+  padding: 1em 0em;
 }
 
 header nav ul li:nth-of-type(3) img {
