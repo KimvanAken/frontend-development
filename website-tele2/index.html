@@ -7,7 +7,8 @@
     <title>Tele2: Alles voor mobiel, vaste telefonie, internet & TV</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
     <!-- favicon toevoegen -->
-
+    <script src="./scripts/index.js"></script>
+    <!-- javascript -->
     <!-- stylesheet koppelen (2e niet vergeten!!!!!!!!!!!!)-->
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
@@ -44,12 +45,12 @@
             /></a>
           </li>
           <section>
-            <nav>
+            <button href="./index.html">
               <!-- deze zijn voor vormgeving hamburger menu :) !-->
-              <div></div>
-              <div></div>
-              <div></div>
-            </nav>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
             <!-- hamburger navigation?-->
           </section>
         </ul>
@@ -61,7 +62,8 @@
         <h2 lang="en">Let's love <span>louder</span></h2>
         <!--span voor vormgeving :)-->
         <ul>
-          <li lang="en">Unlimited</li> <span lang="en">data</span> voor € 25/<abbr title="Maand">MND</abbr>*</li>         <!--span voor engelse taal-->
+          <li>Unlimited data voor € 25/<abbr title="Maand">MND</abbr>*</li>
+          <!--span voor engelse taal-->
         </ul>
         <ul>
           <li>
@@ -89,21 +91,33 @@
           </li>
         </ul>
       </section>
+
       <section>
         <p>
           *De vermelde prijs is
           <abbr title="in combinatie met">i.c.m.</abbr>een 2-jarig 5G-abonnement
-          met onbeperkt <span lang="en">data</span> in <abbr title="Nederland">NL</abbr>en 24
+          met onbeperkt <span lang="en">data</span> in
+          <abbr title="Nederland">NL</abbr>en 24
           <abbr title="Gigabyte">GB</abbr> in de
           <abbr title="Europese Unie">EU</abbr>.
         </p>
       </section>
 
       <section>
+        <div></div>
+        <!--vormgeving driehoek-->
         <nav>
           <ul>
-            <li><a href="./index.html"><span lang="en">Smartphone</span>abonnement</a></li>
-            <li><a href="./index.html"><span lang="en">Sim Only</span> abonnement</a></li>
+            <li>
+              <a href="./index.html"
+                ><span lang="en">Smartphone</span>abonnement</a
+              >
+            </li>
+            <li>
+              <a href="./index.html"
+                ><span lang="en">Sim Only</span> abonnement</a
+              >
+            </li>
             <li><a href="./index.html">Abonnement verlengen</a></li>
             <li><a href="./index.html">Internet, TV & Bellen</a></li>
           </ul>
@@ -120,10 +134,8 @@
         <h2>Pro. Op topniveau.</h2>
         <ul>
           <li>
-            
-              10 <abbr title="Gigabyte">GB</abbr> voor de prijs van 5
-              <abbr title="Gigabyte">GB</abbr>
-            
+            10 <abbr title="Gigabyte">GB</abbr> voor de prijs van 5
+            <abbr title="Gigabyte">GB</abbr>
           </li>
           <li>Gratis aansluiten</li>
           <li>Bestel 'm nu!</li>
@@ -133,8 +145,16 @@
           alt="een foto van twee Iphone 14 pro's, boven elkaar."
         />
         <ul>
-          <li><a href="./index.html">Shop de <span lang="en">iPhone</span> 14 Pro</a></li>
-          <li><a href="./index.html">Bekijk <span lang="en">iPhone</span> 14 serie</a></li>
+          <li>
+            <a href="./index.html"
+              >Shop de <span lang="en">iPhone</span> 14 Pro</a
+            >
+          </li>
+          <li>
+            <a href="./index.html"
+              >Bekijk <span lang="en">iPhone</span> 14 serie</a
+            >
+          </li>
         </ul>
       </section>
 
@@ -153,12 +173,28 @@
         <details>
           <summary>Populair</summary>
           <ul>
-            <li><a href="./index.html"><span lang="en">iPhone</span> 14 Serie</a></li>
-            <li><a href="./index.html"><span lang="en">iPhone</span> 14 Pro Max</a></li>
-            <li><a href="./index.html"><span lang="en">iPhone</span> 14 Plus</a></li>
-            <li><a href="./index.html"><span lang="en">iPhone</span> 13</a></li>
-            <li><a href="./index.html"><span lang="en">iPhone</span> 13 Pro</a></li>
-            <li><a href="./index.html"><span lang="en">Samsung Galaxy</span> S22</a></li>
+            <li>
+              <a href="./index.html"><span lang="en">iPhone</span> 14 Serie</a>
+            </li>
+            <li>
+              <a href="./index.html"
+                ><span lang="en">iPhone</span> 14 Pro Max</a
+              >
+            </li>
+            <li>
+              <a href="./index.html"><span lang="en">iPhone</span> 14 Plus</a>
+            </li>
+            <li>
+              <a href="./index.html"><span lang="en">iPhone</span> 13</a>
+            </li>
+            <li>
+              <a href="./index.html"><span lang="en">iPhone</span> 13 Pro</a>
+            </li>
+            <li>
+              <a href="./index.html"
+                ><span lang="en">Samsung Galaxy</span> S22</a
+              >
+            </li>
           </ul>
         </details>
         <details>
@@ -167,7 +203,9 @@
             <li><a href="./index.html">Mobiel abonnement</a></li>
             <li><a href="./index.html">Mobiel telefoons</a></li>
             <li><a href="./index.html">Mobiel internet</a></li>
-            <li><a href="./index.html"><span lang="en">Sim Only</span></a></li>
+            <li>
+              <a href="./index.html"><span lang="en">Sim Only</span></a>
+            </li>
             <li><a href="./index.html">Verlengen</a></li>
           </ul>
         </details>
@@ -182,7 +220,7 @@
           </ul>
         </details>
         <details>
-          <summary> <span lang="en">Service</span></summary>
+          <summary><span lang="en">Service</span></summary>
           <ul>
             <li><a href="./index.html">Klantenservice</a></li>
             <li><a href="./index.html">Contact</a></li>
@@ -201,6 +239,7 @@
       </section>
       <section>
         <blockquote>Bepaal het helemaal</blockquote>
+        <!--blockquote toestemming van sanne :-)-->
         <a href="./index.html"
           ><img src="./images/logo.jpg" alt="Tele2 Logo"
         /></a>

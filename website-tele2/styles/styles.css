@@ -40,27 +40,29 @@
 :root {
   --achtergrond-kleur-1: #000000;
   --achtergrond-kleur-2: #ffd300;
+  --achtergrond-kleur-2-hover: #ecdc8d;
+  --achtergrond-kleur-2-hover-donker: #cca900;
   --achtergrond-kleur-3: #ffffff;
   --iPhone-tekst-kleur: linear-gradient(
     rgb(232 150 253),
     rgb(184 76 240) 72%
   ); /* credit: https://cssgradient.io/ */
 
-  --button-reeks-zwart-hover-kleur: #545454;
+  --button-reeks-zwart-hover-kleur: #808080;
 
   --button-reeks-onder-kleur1: #009fdf;
-  --button-reeks-onder-kleur1-hover: #66c5ec;
+  --button-reeks-onder-kleur1-hover: #9adffa;
 
   --button-reeks-onder-kleur2: #005eb8;
-  --button-reeks-onder-kleur2-hover: #669ed4;
+  --button-reeks-onder-kleur2-hover: #88b3db;
 
   --button-reeks-onder-kleur3: #702082;
-  --button-reeks-onder-kleur3-hover: #a979b4;
+  --button-reeks-onder-kleur3-hover: #d0acd8;
 
   --button-reeks-onder-kleur4: #d40f7d;
-  --button-reeks-onder-kleur4-hover: #e56fb1;
+  --button-reeks-onder-kleur4-hover: #ffacdb;
 
-  /*invert*/
+  /*de hover kleuren zijn aangepast tegenover het origineel voor meer accesibility :) */
 }
 
 /**********************/
@@ -69,7 +71,6 @@
 a {
   font-family: "tele2", Helvetica, Arial, sans-serif;
   text-decoration: none;
-  font-weight: 700;
   color: (var(--achtergrond-kleur-3));
 }
 
@@ -116,6 +117,9 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  position: sticky;
+  top: 0;
 }
 
 h1 {
@@ -124,8 +128,9 @@ h1 {
   left: -9999em;
 }
 
-header > nav {
-  height: 100%;
+/*iets meer ruimte boven tele 2 logo*/
+body header > a {
+  padding-top: 0.3em;
 }
 
 header > nav ul {
@@ -151,7 +156,7 @@ header > nav ul li:hover {
 header nav ul li img {
   /*de images in de nav*/
   max-width: 1.2em;
-  margin: 0.25em 1em;
+  margin: 0.5em 1em 0.25em 1em;
   padding: 1em 0em;
 }
 
@@ -161,23 +166,70 @@ header nav ul li:nth-of-type(3) img {
   margin: 0.25em 1em;
   margin-top: -0.4em;
 }
+/****************************/
+/* knopje hamburger menuuuuu/   
+ credit: https://codepen.io/shooft/pen/dymRMBZ */
+header section button {
+  display: grid;
+  place-items: center;
+}
 
-/*Hamburger menu*/
+/* alle 3 divs*/
+header section button span {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  width: 1.6em;
+  height: 0.25em;
+  background-color: var(--achtergrond-kleur-3);
+  transition-duration: 0.5s;
+}
+/*div 1 dicht*/
+header section button span:nth-of-type(1) {
+  transform: translateY(-0.4em);
+}
+
+/*div 3 dicht */
+header section button span:nth-of-type(3) {
+  transform: translateY(0.4em);
+}
+
+/*************/
+/*div 1 open*/
+/***********/
+header section button.menuOpen span:nth-of-type(1) {
+  transform: rotate(45deg) scalex(1.25);
+}
+
+/*div 2 open*/
+header section button.menuOpen span:nth-of-type(2) {
+  opacity: 0;
+}
+
+/*div 3 open*/
+header section button.menuOpen span:nth-of-type(3) {
+  transform: rotate(-45deg) scalex(1.25);
+}
+
+/* Hamburger menu
 header section nav div {
   background-color: var(--achtergrond-kleur-3);
   border-radius: 4px;
   width: 1.6em;
   height: 0.25em;
   margin: 0.25em;
-}
+} */
 
-/* main css later verplaatsen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* main css later verplaatsen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
+/**********/
 /***********/
 /* main!! */
 /*********/
+/**********/
 
-/* article 1 */
+/**************/
+/* section 1 */
+/************/
 
 /* credit: https://stackoverflow.com/questions/34141950/how-to-use-tick-checkmark-symbol-instead-of-bullets-in-unordered-list */
 /*list style een checkmark maken, en dikker*/
@@ -210,23 +262,30 @@ main > section:nth-of-type(3) {
   background-color: var(--achtergrond-kleur-2);
 }
 
+/* kleine voorwaarden tekst*/
 main > section:nth-of-type(3) > p {
   font-size: 0.75em;
-  padding-left: 0.5em;
+  padding-left: 1em;
 }
 
 main > section:nth-of-type(1) {
   background-color: var(--achtergrond-kleur-1);
 }
 
+/* cupido man!!!!*/
 main > section:nth-of-type(1) > img {
-  width: 20em;
+  width: 22em;
   display: block;
+  margin-top: 2em;
+  margin-bottom: 2em;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* section 2 */
+/**********************************/
+/* section 2 >> "check it out!"  */
+/********************************/
+
 main > section:nth-of-type(2) {
   background-color: var(--achtergrond-kleur-2);
   padding: 1em;
@@ -271,14 +330,33 @@ main section:nth-of-type(2) ul li:nth-of-type(2):hover {
   color: var(--achtergrond-kleur-3);
 }
 
+/* gele driehoek!!!!!! credit:http://apps.eky.hk/css-triangle-generator/*/
+main section:nth-of-type(4) > div {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4em 100vw 0 0px;
+  border-color: var(--achtergrond-kleur-2) transparent transparent transparent;
+}
+
+/***********************************/
 /* section 4: zwarte list linkjes */
+/*********************************/
+
+/* eerst padding weghalen voor de gele driehoek, dan weer terug geven*/
 main > section:nth-of-type(4) {
+  padding: 0em;
   background-color: var(--achtergrond-kleur-3);
+}
+
+main > section:nth-of-type(4) ul {
+  padding: 3em 0em;
 }
 
 /*list link styling*/
 main section:nth-of-type(4) ul li {
   text-align: center;
+  font-weight: 700;
   background-color: var(--achtergrond-kleur-1);
   color: var(--achtergrond-kleur-3);
   margin: 1em;
@@ -293,15 +371,24 @@ main section:nth-of-type(4) ul li:hover {
   color: var(--achtergrond-kleur-3);
 }
 
+/*****************************************/
 /* section 5 >> iphone pro op topniveau */
+/*****************************************/
+
 main > section:nth-of-type(5) {
   background-color: var(--achtergrond-kleur-1);
-  padding: 1em 1em;
+  padding: 4em 1em;
+}
+
+/* dikkere link font*/
+main section:nth-of-type(5) ul li a {
+  font-weight: 700;
 }
 
 main > section:nth-of-type(5) > img:nth-of-type(1) {
   width: 12em;
 }
+
 /*center image*/
 main > section:nth-of-type(5) > img:nth-of-type(2) {
   margin: auto;
@@ -313,7 +400,13 @@ main > section:nth-of-type(5) > img:nth-of-type(2) {
 main > section:nth-of-type(5) ul:nth-of-type(1) {
   list-style: disc;
   color: var(--achtergrond-kleur-3);
+  margin-left: 2em;
   margin-bottom: 8em;
+}
+
+/* extra ruimte bij list items */
+main > section:nth-of-type(5) ul:nth-of-type(1) li {
+  padding: 0.25em;
 }
 
 /* eerste blokje geel*/
@@ -341,6 +434,18 @@ main > section:nth-of-type(5) ul:nth-of-type(2) li:nth-of-type(2) {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in;
 }
 
+/*transitions*/
+/* 1e blokje geel*/
+main > section:nth-of-type(5) ul:nth-of-type(2) li:nth-of-type(1):hover {
+  background-color: var(--achtergrond-kleur-2-hover);
+}
+
+/* tweede blokje alleen gele outline*/
+main > section:nth-of-type(5) ul:nth-of-type(2) li:nth-of-type(2):hover {
+  color: var(--achtergrond-kleur-3);
+  background-color: var(--achtergrond-kleur-2-hover-donker);
+}
+
 /* paarse gradient tekst*/
 h2:nth-child(2) {
   background-image: var(--iPhone-tekst-kleur);
@@ -349,9 +454,14 @@ h2:nth-child(2) {
   color: transparent;
   font-weight: 700;
 }
-
+/**************/
 /* section 6 */
-/* buttons met kleuren!!!!!!!*/
+/************/
+/* dikkere link font*/
+main section:nth-of-type(6) ul li a {
+  font-weight: 700;
+}
+
 main section:nth-of-type(6) {
   background-color: var(--achtergrond-kleur-3);
   padding: 3em 0em;
@@ -380,26 +490,27 @@ main section:nth-of-type(6) ul li a {
 main section:nth-of-type(6) ul li:nth-of-type(1) {
   margin: 1em;
   background-color: var(--button-reeks-onder-kleur1);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in;
+  transition: background-color 0.15s ease-in-out, color 0.2s ease-in;
+  /*transition duration is aangepast tegenover het origineel om sneller te zijn a.d.h.v feedback acces. test*/
 }
 /* samsung button blauw*/
 main section:nth-of-type(6) ul li:nth-of-type(2) {
   margin: 1em;
   background-color: var(--button-reeks-onder-kleur2);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in;
+  transition: background-color 0.15s ease-in-out, color 0.2s ease-in;
 }
 
 /* OPPO button paars*/
 main section:nth-of-type(6) ul li:nth-of-type(3) {
   margin: 1em;
   background-color: var(--button-reeks-onder-kleur3);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in;
+  transition: background-color 0.15s ease-in-out, color 0.2s ease-in;
 }
 /* xiaomi button roze*/
 main section:nth-of-type(6) ul li:nth-of-type(4) {
   margin: 1em;
   background-color: var(--button-reeks-onder-kleur4);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in;
+  transition: background-color 0.15s ease-in-out, color 0.2s ease-in;
 }
 
 /************************/
@@ -422,13 +533,15 @@ main section:nth-of-type(6) ul li:nth-of-type(4):hover {
   background-color: var(--button-reeks-onder-kleur4-hover);
 }
 
+/*******************/
 /***********/
 /* footer */
 /*********/
+/*******************/
 
-/**************/
-/* article 6 */
-/************/
+footer section {
+  padding-left: 1em;
+}
 
 footer > section:nth-of-type(1) {
   background-color: var(--achtergrond-kleur-2);
@@ -442,36 +555,42 @@ footer > section:first-of-type ul li a {
   color: var(--achtergrond-kleur-1);
 }
 
-/*pijltje begin van summary weghalen en vervangen*/
+/* summary die uitklapt*/
+footer > section details summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+footer > section details summary {
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+/*pijltje begin van summary weghalen en vervangen*/
 footer > section details summary::marker {
   content: none;
 }
 
-/* dit nog even fixen!!!!!!!!!! icoontje maken in illustrator en link vervangen*/
-
+/*icoontje bij details summary*/
 footer > section details summary::after {
   content: "";
-
-  display: block;
-
+  display: inline-block; /* zodat het niet op een nieuwe regel komt*/
   width: 2.5rem;
   aspect-ratio: 1/1;
-  background-color: red;
-  border-radius: 50%;
+  background-color: none;
 
-  background-image: url("https://assets.codepen.io/274456/ui-icon-arrow.svg");
+  background-image: url(../images/arrow-summary.png);
   background-size: 40% 40%;
   background-position: center center;
   background-repeat: no-repeat;
 
-  transition: 0.5s;
-
+  transition: 0.3s;
+  transition-timing-function: ease-out;
   transform: rotate(90deg);
 }
 
 footer > section details[open] summary::after {
-  background-color: gold;
   transform: rotate(-90deg);
 }
 
@@ -506,4 +625,9 @@ footer > section:nth-of-type(2) > ul li {
 
 footer > section:nth-of-type(2) > ul li:hover {
   text-decoration: underline;
+}
+
+footer > section details ul li {
+  margin: 1em 0em;
+  font-weight: 300;
 }
