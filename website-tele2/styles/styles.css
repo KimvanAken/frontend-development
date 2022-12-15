@@ -30,11 +30,6 @@
   font-family: "tele2", Helvetica, Arial, sans-serif;
 }
 
-/*niet scrollen wanneer menu rechts open :)*/
-html.menuOpen {
-  overflow: hidden;
-}
-
 /********************/
 /* fonts en resets */
 /******************/
@@ -78,6 +73,11 @@ html.menuOpen {
 /********************/
 
 body.open {
+  overflow: hidden;
+}
+
+/*niet scrollen wanneer menu rechts open :)*/
+html.menuOpen {
   overflow: hidden;
 }
 
@@ -137,12 +137,15 @@ button {
 
 header {
   background-color: black;
+  position: sticky;
+  top: 0;
+}
+
+header nav {
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  position: sticky;
-  top: 0;
 }
 
 h1 {
@@ -152,8 +155,9 @@ h1 {
 }
 
 /*iets meer ruimte boven tele 2 logo*/
-body header > a {
-  padding-top: 0.3em;
+body header > a img {
+  padding-top: 2em;
+  height: 3.5em;
 }
 
 header > nav ul {
@@ -169,8 +173,9 @@ header > nav ul li:hover img {
   filter: invert(100%);
 }
 
-header > nav > ul:nth-child(1) > li a {
-  padding-top: 4em;
+header > nav > ul > li a {
+  display: block;
+  padding: 0.6em 0.5em;
   height: 100%;
 }
 
@@ -189,7 +194,7 @@ header nav ul li:nth-of-type(3) img {
   /*het mandje om groter te maken :)*/
   max-width: 1.7em;
   margin: 0.25em 1em;
-  margin-top: -0.4em;
+  margin-top: -0.2em;
 }
 
 /****************************/
@@ -198,7 +203,7 @@ header nav ul li:nth-of-type(3) img {
 header li button {
   display: grid;
   place-items: center;
-  padding: 2em 1em;
+  padding: 3.2em 1em;
   height: 100%;
   margin: 0;
 }
@@ -206,6 +211,7 @@ header li button {
 /*padding rechts voor wanneer de scrollbar verdwijnt*/
 header li button.open {
   padding-right: 2em;
+  padding-left: 2em;
   background-color: var(--achtergrond-kleur-3);
 }
 
@@ -261,13 +267,13 @@ header nav > section {
   height: 100%;
   width: 100%;
   position: fixed;
-  inset: 3.9em 0 0 0; /* zorgt ervoor dat het boven de pagina staat*/
+  inset: 5em 0 0 0; /* zorgt ervoor dat het boven de pagina staat*/
   background-color: var(--achtergrond-kleur-3);
   transition: 0.1s;
   z-index: 100000;
 
   transform: translateX(100%);
-  transition: 0.3s;
+  transition: transform 0.3s; /* zodat het geen gekke animatie op andere dingen doet*/
 }
 
 /*wanneer hij open is*/
@@ -360,13 +366,13 @@ header nav > section ul:nth-of-type(2) li:nth-of-type(2) {
 
 /* credit: https://stackoverflow.com/questions/34141950/how-to-use-tick-checkmark-symbol-instead-of-bullets-in-unordered-list */
 /*list style een checkmark maken, en dikker*/
-main > section:nth-of-type(1) > ul li:before {
+main section > section:nth-of-type(1) > ul li:before {
   content: "✓";
   font-weight: 800;
   margin: 0.5em;
 }
 
-main > section:nth-of-type(1) > ul {
+main section > section:nth-of-type(1) > ul {
   margin: 0.25em;
 }
 
@@ -381,12 +387,26 @@ h2:nth-child(1) span {
   display: block;
 }
 
-main > section:nth-of-type(1) ul {
+main section > section:nth-of-type(1) ul {
   color: var(--achtergrond-kleur-3);
 }
 
-main > section:nth-of-type(3) {
+main section > section:nth-of-type(3) {
   background-color: var(--achtergrond-kleur-2);
+}
+
+main > section:nth-of-type(1) {
+  background-color: var(--achtergrond-kleur-1);
+}
+
+/* cupido man!!!!*/
+main section > section:nth-of-type(2) > img {
+  width: 22em;
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* kleine voorwaarden tekst*/
@@ -395,18 +415,8 @@ main > section:nth-of-type(3) > p {
   padding-left: 1em;
 }
 
-main > section:nth-of-type(1) {
-  background-color: var(--achtergrond-kleur-1);
-}
-
-/* cupido man!!!!*/
-main > section:nth-of-type(1) > img {
-  width: 22em;
-  display: block;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  margin-left: auto;
-  margin-right: auto;
+main > section:nth-of-type(3) {
+  background-color: var(--achtergrond-kleur-2);
 }
 
 /**********************************/
@@ -440,6 +450,8 @@ main section:nth-of-type(2) ul li:nth-of-type(1) {
 main section:nth-of-type(2) ul li:nth-of-type(1):hover {
   background-color: var(--button-reeks-zwart-hover-kleur);
   color: var(--achtergrond-kleur-3);
+  text-shadow: 1px 1px var(--achtergrond-kleur-1),
+    2px 2px var(--achtergrond-kleur-1);
 }
 
 /*tweede gele blokje*/
@@ -496,6 +508,8 @@ main section:nth-of-type(4) ul li {
 main section:nth-of-type(4) ul li:hover {
   background-color: var(--button-reeks-zwart-hover-kleur);
   color: var(--achtergrond-kleur-3);
+  text-shadow: 1px 1px var(--achtergrond-kleur-1),
+    2px 2px var(--achtergrond-kleur-1);
 }
 
 /*****************************************/
@@ -571,6 +585,8 @@ main > section:nth-of-type(5) ul:nth-of-type(2) li:nth-of-type(1):hover {
 main > section:nth-of-type(5) ul:nth-of-type(2) li:nth-of-type(2):hover {
   color: var(--achtergrond-kleur-3);
   background-color: var(--achtergrond-kleur-2-hover-donker);
+  text-shadow: 1px 1px var(--achtergrond-kleur-1),
+    2px 2px var(--achtergrond-kleur-1);
 }
 
 /* paarse gradient tekst*/
@@ -590,6 +606,7 @@ main section:nth-of-type(6) ul li a {
 }
 
 main section:nth-of-type(6) {
+  display: grid;
   background-color: var(--achtergrond-kleur-3);
   padding: 3em 0em;
 }
@@ -646,18 +663,26 @@ main section:nth-of-type(6) ul li:nth-of-type(4) {
 
 main section:nth-of-type(6) ul li:nth-of-type(1):hover {
   background-color: var(--button-reeks-onder-kleur1-hover);
+  text-shadow: 1px 1px var(--achtergrond-kleur-1),
+    2px 2px var(--achtergrond-kleur-1);
 }
 
 main section:nth-of-type(6) ul li:nth-of-type(2):hover {
   background-color: var(--button-reeks-onder-kleur2-hover);
+  text-shadow: 1px 1px var(--achtergrond-kleur-1),
+    2px 2px var(--achtergrond-kleur-1);
 }
 
 main section:nth-of-type(6) ul li:nth-of-type(3):hover {
   background-color: var(--button-reeks-onder-kleur3-hover);
+  text-shadow: 1px 1px var(--achtergrond-kleur-1),
+    2px 2px var(--achtergrond-kleur-1);
 }
 
 main section:nth-of-type(6) ul li:nth-of-type(4):hover {
   background-color: var(--button-reeks-onder-kleur4-hover);
+  text-shadow: 1px 1px var(--achtergrond-kleur-1),
+    2px 2px var(--achtergrond-kleur-1);
 }
 
 /*******************/
@@ -757,4 +782,175 @@ footer > section:nth-of-type(2) > ul li:hover {
 footer > section details ul li {
   margin: 1em 0em;
   font-weight: 300;
+}
+
+/********************************/
+/****** media query ************/
+/******************************/
+
+/*********/
+/*header*/
+/*******/
+
+@media (min-width: 1024px) {
+  header,
+  nav {
+    width: 100%;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+  }
+
+  header nav {
+    max-width: 70em;
+  }
+
+  header > nav ul li:hover a {
+    color: var(--achtergrond-kleur-1);
+  }
+
+  header nav > ul {
+    order: 3000;
+    height: unset; /* height reset*/
+    width: unset; /*width reset*/
+    transition: none;
+  }
+
+  header nav > section {
+    order: 200;
+    position: relative;
+    background: none;
+    display: block;
+    flex-direction: row;
+    color: var(--achtergrond-kleur-3);
+    height: unset; /* height reset*/
+    width: unset; /*width reset*/
+    flex: 1;
+    transform: translateX(0);
+    inset: 0 0 0 0; /*naar onder*/
+
+    margin-left: 3em;
+  }
+
+  header nav > section ul {
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+
+    height: unset; /* height reset*/
+    width: unset; /*width reset*/
+  }
+
+  /*2e nav ding weg*/
+  header nav > section ul:nth-of-type(2),
+
+  header nav section li:nth-child(4),
+  header nav section li:nth-child(5),
+/*dingen in de nav weg*/
+  header nav section li:nth-child(6),
+  header nav section li:nth-child(7),
+  header nav > ul li:last-child /*hamburger menu knopje*/ {
+    display: none;
+  }
+
+  /* border om de links weg */
+  header nav > section ul:nth-of-type(1) li {
+    border: none;
+    width: unset;
+  }
+
+  /*tekentje in de nav weg*/
+  header nav > section ul:nth-of-type(1) li:nth-child(-n + 3)::after {
+    content: none;
+  }
+
+  /*****************************/
+  /*main***********************/
+  /***************************/
+
+  /**************/
+  /* section 1 */
+  /************/
+
+  main > section:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 rijen, pakken evengroot gedeelte */
+  }
+
+  /* tekst section 1!!!!*/
+  main section > section:nth-of-type(1) {
+    order: 2;
+  }
+
+  /* cupido man section!!!!*/
+  main section > section:nth-of-type(2) {
+    order: 1;
+  }
+
+  /* cupido man zelf!!!!*/
+  main section > section:nth-of-type(2) img {
+    width: 33em;
+  }
+
+  main section:nth-of-type(2) ul {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h2:nth-child(1) {
+    padding: 0.25em 0.25em 0em 0.25em;
+    font-size: 3em;
+  }
+
+  /***********************************/
+  /* section 4: zwarte list linkjes */
+  /*********************************/
+
+  main > section:nth-of-type(4) ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /******************/
+  /* section 6******/
+  /*kleurenbuttons*/
+  /***************/
+
+  main section:nth-of-type(6) ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/********************************/
+/****** media query TWEE *******/
+/******************************/
+
+@media (min-width: 1280px) {
+  /***********************************/
+  /* section 4: zwarte list linkjes */
+  /*********************************/
+
+  main > section:nth-of-type(4) ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /******************/
+  /* section 6******/
+  /*kleurenbuttons*/
+  /***************/
+
+  main section:nth-of-type(6) ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
