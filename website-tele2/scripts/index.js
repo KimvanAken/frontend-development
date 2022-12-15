@@ -1,7 +1,7 @@
-var eersteStreepjesButton = document.querySelector("header section button");
+var menuButton = document.querySelector("header section > button");
 
-eersteStreepjesButton.addEventListener("click", eersteStreepjesButtonKlik);
+menuButton.addEventListener("click", menuButtonKlik);
 
-function eersteStreepjesButtonKlik() {
-  eersteStreepjesButton.classList.toggle("menuOpen");
+function menuButtonKlik() {
+  menuButton.classList.toggle("menuOpen");
 }

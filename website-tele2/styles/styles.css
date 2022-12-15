@@ -30,6 +30,10 @@
   font-family: "tele2", Helvetica, Arial, sans-serif;
 }
 
+html.menuOpen {
+  overflow: hidden;
+}
+
 /********************/
 /* fonts en resets */
 /******************/
@@ -61,6 +65,9 @@
 
   --button-reeks-onder-kleur4: #d40f7d;
   --button-reeks-onder-kleur4-hover: #ffacdb;
+
+  --achtergrond-kleur-nav-button: #f6f6f6;
+  --text-kleur-nav-button2: #a4a4a4;
 
   /*de hover kleuren zijn aangepast tegenover het origineel voor meer accesibility :) */
 }
@@ -108,6 +115,11 @@ a:active {
   font-size: 1.2em;
 }
 
+button:not([disabled]),
+summary {
+  cursor: pointer;
+}
+
 /***********/
 /* header */
 /*********/
@@ -141,11 +153,12 @@ header > nav ul {
   align-items: center;
 }
 
+/*extra ruimte om icoon goed aan te klikken*/
 header > nav ul li:hover img {
   filter: invert(100%);
 }
 
-header > nav ul li a {
+header > nav > ul:nth-child(1) > li a {
   padding-top: 4em;
 }
 
@@ -166,6 +179,7 @@ header nav ul li:nth-of-type(3) img {
   margin: 0.25em 1em;
   margin-top: -0.4em;
 }
+
 /****************************/
 /* knopje hamburger menuuuuu/   
  credit: https://codepen.io/shooft/pen/dymRMBZ */
@@ -174,8 +188,8 @@ header section button {
   place-items: center;
 }
 
-/* alle 3 divs*/
-header section button span {
+/* alle 3 spans streepjes*/
+header section button > span {
   grid-row-start: 1;
   grid-column-start: 1;
   width: 1.6em;
@@ -183,10 +197,13 @@ header section button span {
   background-color: var(--achtergrond-kleur-3);
   transition-duration: 0.5s;
 }
+
 /*div 1 dicht*/
 header section button span:nth-of-type(1) {
   transform: translateY(-0.4em);
 }
+
+/*div 2 staat al goed*/
 
 /*div 3 dicht */
 header section button span:nth-of-type(3) {
@@ -210,14 +227,78 @@ header section button.menuOpen span:nth-of-type(3) {
   transform: rotate(-45deg) scalex(1.25);
 }
 
-/* Hamburger menu
-header section nav div {
+/********************/
+/* uitschuif menu  */
+/******************/
+
+header nav section > section {
+  flex-direction: column;
+  position: fixed;
+  inset: 4.3em 0 0 0; /* zorgt ervoor dat het boven de pagina staat*/
+
   background-color: var(--achtergrond-kleur-3);
-  border-radius: 4px;
-  width: 1.6em;
-  height: 0.25em;
-  margin: 0.25em;
-} */
+  transition: 0.1s;
+}
+
+header nav section > section ul {
+  flex-direction: column;
+  width: 100vw;
+}
+
+/* eerste 3 van de nav dikkere tekst*/
+header nav section > section ul:nth-of-type(1) li:nth-child(-n + 3) {
+  font-weight: 700;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* pijltje erachter*/
+header nav section > section ul:nth-of-type(1) li:nth-child(-n + 3)::after {
+  content: "";
+  display: inline-block; /* zodat het niet op een nieuwe regel komt*/
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+  background-color: none;
+
+  background-image: url(../images/arrow-summary.png);
+  background-size: 40% 40%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* ruimte maken*/
+header nav section > section ul:nth-of-type(1) li {
+  padding: 1em;
+  border-color: var(--achtergrond-kleur-nav-button);
+  border-style: solid;
+  border-width: 2px;
+}
+
+/* onderste twee links sidebar*/
+header nav section > section ul:nth-of-type(2) {
+  display: flex;
+  flex-direction: row;
+}
+
+/* prive*/
+header nav section > section ul:nth-of-type(2) li:nth-of-type(1) {
+  font-weight: 700;
+  padding: 2em;
+  border-color: var(--achtergrond-kleur-nav-button);
+  border-style: solid;
+  border-width: 2px;
+}
+
+/* zakelijk*/
+header nav section > section ul:nth-of-type(2) li:nth-of-type(2) {
+  background-color: var(--achtergrond-kleur-nav-button);
+  color: var(--text-kleur-nav-button2);
+  padding: 2em;
+
+  border-color: var(--achtergrond-kleur-nav-button);
+  border-style: solid;
+  border-width: 2px;
+}
 
 /* main css later verplaatsen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
